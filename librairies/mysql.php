@@ -9,13 +9,13 @@ class mysql {
         }
     }
 
-    public function insertion(string $nom, string $prenom,string $message):void {
+    public function insertion(string $nom, string $produit,string $commentaire):void {
         $this->open();
 
-        $requete = "INSERT INTO messages (nom,prenom, message) VALUES (:nom,:prenom,:message)";
+        $requete = "INSERT INTO avis (nom, produit, commentaire) VALUES (:nom,:produit,:commentaire)";
         $insert = $this->open->prepare($requete);
 
-        $insert->execute(['nom'=>$nom, 'prenom'=>$prenom, 'message'=>$message]);
+        $insert->execute(['nom'=>$nom, 'produit'=>$produit, 'commentaire'=>$commentaire]);
 
         $this->open = NULL;
 
@@ -23,7 +23,7 @@ class mysql {
 
     public function cherche(){
         //écriture de la requete
-        $requete = "SELECT nom, prenom, message, date FROM messages ORDER BY date DESC";
+        $requete = "SELECT nom, produit, commentaire, date FROM avis ORDER BY date DESC";
         
         $this->open();
 

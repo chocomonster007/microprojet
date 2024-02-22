@@ -137,7 +137,7 @@ section{
 }
 
 .form{
-    width: calc(80% - 60px);
+    width: calc(60% - 60px);
     background-color: white;
     border-radius: 20px;
     margin: 20vh auto 5vh auto;
@@ -147,6 +147,19 @@ section{
     text-align: center;
 }
 
+.form button{
+    margin-top: 20px;
+    background-color: #B6CFDA;
+    color: #133D7C;
+    padding: 10px 40px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
 
 
 .form textarea{
@@ -173,13 +186,16 @@ form{
     border: none;
     padding: 15px;
     border-radius: 10px;
+    width: 30%;
 }
 
-.produit button:hover{
-    cursor: pointer;
 
+.messages{
+    width: 60%;
+    margin: 50px auto;
+    background-color: white;
+    text-align: center;
 }
-
 
 @media only screen and (min-width:980px){
     nav{
