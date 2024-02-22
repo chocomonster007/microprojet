@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- déclaration encodage -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- affichage smartphone Apple échelle 1-->
+<!--voir https://www.alsacreations.com/article/lire/1490-Comprendre-le-Viewport-dans-le-Web-mobile.html-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- emplacement pour le contenu de la balise title : essentiel pour le SEO -->
+<title> {#titre#} </title>
+<!-- chargement de la css -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!-- chargement de la favicon -->
+<link href="images/favicon.png" rel="icon" />
+</head>
+<body class="page_{#page#}">
+<nav> {#menu#} </nav>
+<section>
+{#contenu#}
+</section>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<!-- chargement du javascript-->
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

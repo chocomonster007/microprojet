@@ -1,0 +1,190 @@
+@font-face {
+	font-family: 'Arimo';
+	src: url('../font/Arimo-Bold.ttf') format('truetype');
+    font-weight: 700
+}
+
+@font-face {
+	font-family: 'Arimo';
+	src: url('../font/Arimo-Medium.ttf') format('truetype');
+    font-weight: 500
+}
+
+@font-face {
+	font-family: 'Arimo';
+	src: url('../font/Arimo-Regular.ttf') format('truetype');
+    font-weight: 400
+}
+
+@font-face {
+	font-family: 'Arimo';
+	src: url('../font/Arimo-SemiBold.ttf') format('truetype');
+    font-weight: 600
+}
+
+
+
+:root{
+    --radius:0.25rem;
+    font-family: "Arimo",sans-serif;
+    font-weight: 400;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: calc(100vh - 20px);
+    background-color: #B6CFDA;
+    overflow-x: hidden;
+
+}
+nav{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:20px;
+    top:auto;
+}
+nav ul{
+    display: flex;
+
+    background-color: #E3EEF2;
+    padding: 0.4375rem;
+    margin: 0;
+    border-radius: 10px;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 10px;
+    
+}
+
+li a{
+    text-decoration: none;
+    padding:8px 12px;
+    color: #133D7C;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.active{
+    color:#B6CFDA;
+    background-color: #0D2F61;
+}
+
+.description{display: none;}
+
+section{
+    width: 100%;
+
+}
+
+.produit img{
+    height: 250px;
+    width:auto
+}
+
+.produit:first-child{
+    margin-top: 20vh;
+}
+
+.produit:last-child{
+    background-color: black;
+}
+
+.produit:last-child h1{
+    color:#B6CFDA
+}
+.produit{
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px auto;
+
+}
+
+.visible{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+.produit h1{
+    color:#133D7C;
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.produit button{
+    background-color: transparent;
+    border: none;
+    color: #133D7C;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.produit:last-child button{
+    color:#B6CFDA
+}
+
+.form{
+    width: calc(80% - 60px);
+    background-color: white;
+    border-radius: 20px;
+    margin: 20vh auto 5vh auto;
+    padding: 30px;
+}
+.form h1{
+    text-align: center;
+}
+
+
+
+.form textarea{
+    resize: none;
+    width: calc(100% - 20px);
+    background-color: #B6CFDA;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+form{
+    text-align: center;
+}
+.headerForm{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.headerForm input,
+.headerForm select{
+    background-color: #B6CFDA;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.produit button:hover{
+    cursor: pointer;
+
+}
+
+
+@media only screen and (min-width:980px){
+    nav{
+        top:20px;
+        bottom:auto;
+    }
+
+}
