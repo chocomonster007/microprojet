@@ -37,4 +37,14 @@ class mysql {
         return $resultat;
 
     }
+
+    public function sameAs(string $nom,string $produit, string $commentaire){
+            $requete = "SELECT nom, produit, commentaire FROM avis WHERE (nom = :nom AND produit = :produit) AND commentaire = :commentaire";
+            $this->open();
+            $search = $this->open->prepare($requete);
+            $fetch = $search->execute(["nom"=>$nom, "produit"=>$produit, "commentaire"=>$commentaire]);
+            $resultat = $search->fetch();
+            $this->open = NULL;
+            return $resultat;
+    }
 }

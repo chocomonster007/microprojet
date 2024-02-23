@@ -161,6 +161,10 @@ button:hover{
     cursor: pointer;
 }
 
+div.error{
+    outline: 3px solid red;
+}
+
 
 .form textarea{
     resize: none;

@@ -3,19 +3,23 @@
 $titre = "Les commentaires de nos fanzouzes";
 
 $bd = new mysql();
-$resultats = $bd->cherche();
 
 $nom = filter_input(INPUT_POST,'nom',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $commentaire = filter_input(INPUT_POST,'commentaire',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $produit = filter_input(INPUT_POST,'produit',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
+$classe="";
+
 if($nom && $commentaire && $produit){
-    $bd->insertion($nom,$produit,$commentaire);
-    
+    $alreadyExist = $bd->sameAs($nom, $produit, $commentaire);
+    if(!$alreadyExist) $bd->insertion($nom,$produit,$commentaire);
+    else $classe="error";
 }
 
+$resultats = $bd->cherche();
+
 $contenu .=<<<FORMULAIRE
-<div class='form'>
+<div class='form $classe'>
 <h1>Merci de laisser un avis</h1>
 <form action="" method="post">
     <div class="headerForm">
