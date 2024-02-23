@@ -44,6 +44,7 @@ nav{
     transform: translateX(-50%);
     bottom:20px;
     top:auto;
+    z-index: 10;
 }
 nav ul{
     display: flex;
@@ -83,28 +84,28 @@ section{
 
 }
 
-.produit img{
+.produits img{
     height: 250px;
     width:auto
 }
 
-.produit:first-child{
+.produits:first-child{
     margin-top: 20vh;
 }
 
-.produit:last-child{
+.produits:last-child{
     background-color: black;
 }
 
-.produit:last-child h1{
+.produits:last-child h1{
     color:#B6CFDA
 }
-.produit{
+.produits{
     width: 80%;
     background-color: white;
     border-radius: 20px;
     margin: 20px auto;
-
+    position: relative;
 }
 
 .visible{
@@ -113,7 +114,7 @@ section{
     justify-content: space-around;
     padding: 20px 0px;
 }
-.produit h1{
+.produits h1{
     color:#133D7C;
 }
 .detail{
@@ -123,7 +124,7 @@ section{
     align-items: center;
 }
 
-.produit button{
+.produits button{
     background-color: transparent;
     border: none;
     color: #133D7C;
@@ -132,7 +133,7 @@ section{
     align-items: center;
 }
 
-.produit:last-child button{
+.produits:last-child button{
     color:#B6CFDA
 }
 
@@ -142,6 +143,7 @@ section{
     border-radius: 20px;
     margin: 20vh auto 5vh auto;
     padding: 30px;
+    position: relative;
 }
 .form h1{
     text-align: center;
@@ -163,6 +165,18 @@ button:hover{
 
 div.error{
     outline: 3px solid red;
+}
+
+div.error::before{
+    content: "Vous avez déjà envoyer ce commentaire";
+    position: absolute;
+    top: -50px;
+    width:calc(100% - 40px);
+    left: 0;
+    padding: 10px 20px;
+    border: 2px solid red;
+    border-radius: 5px;
+
 }
 
 
@@ -199,6 +213,8 @@ form{
     margin: 50px auto;
     background-color: white;
     text-align: center;
+    padding:20px 0px;
+    border-radius: 20px;
 }
 
 @media only screen and (min-width:980px){

@@ -28,7 +28,7 @@ foreach($noms as $key=>$nom):
     }
 
 
-$contenu .= "<div class='produit'>
+$contenu .= "<div class='produits'>
                 <div class='visible'>
                     <img src='images/produits/{$img[$key]}' alt='".makeAlt($img[$key])."'>
                     <div class='detail'>

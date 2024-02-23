@@ -12,7 +12,10 @@ $classe="";
 
 if($nom && $commentaire && $produit){
     $alreadyExist = $bd->sameAs($nom, $produit, $commentaire);
-    if(!$alreadyExist) $bd->insertion($nom,$produit,$commentaire);
+    if(!$alreadyExist)
+    {$bd->insertion($nom,$produit,$commentaire);
+    $classe="success";
+    }
     else $classe="error";
 }
 
@@ -25,7 +28,7 @@ $contenu .=<<<FORMULAIRE
     <div class="headerForm">
     <input type="text" name="nom" id="nom" placeholder="Votre nom prénom" value="$nom">
     <select name="produit" id="select" value="$produit">
-    <option value="">Produit</option>
+    <option>Produit</option>
     <option value="iphone">Iphone</option>
     <option value="ipad">Ipad</option>
     <option value="watch">Watch</option>
@@ -39,7 +42,7 @@ $contenu .=<<<FORMULAIRE
 FORMULAIRE;
 
 $contenu .= "<div class='messages'>
-                <h1>Les avis sur nos produits</h1>";
+                <h1>Tous les avis</h1>";
 foreach($resultats as $resultat):
     setlocale(LC_TIME, 'fr_FR','fra');
     $date = strtotime($resultat['date']);
@@ -48,7 +51,7 @@ $resultat['produit'] == "watch" ? $adj = 'la ' : $adj ='l\'';
 
 $contenu .= 
 "<div class='commentaire'>
-    <h2 class='nom'>".$resultat['nom']."</h2>
+    <p class='nom'>".$resultat['nom']."</p>
     <p class='date'>Date de l'avis : ". ucfirst(strftime('%A %e %B %Y à %R', $date))."</p>
     <p class='produit'>A propos de $adj".ucfirst($resultat['produit'])."</p>
     <p class='message'>".$resultat['commentaire']."</p>
