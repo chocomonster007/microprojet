@@ -77,11 +77,150 @@ li a{
     background-color: #0D2F61;
 }
 
-.description{display: none;}
+.description{display: none;
+        padding: 20px 10%;}
 
+.description h2{
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.description a{
+    padding: 15px 40px;
+    border-radius: 10px;
+    background-color: #133D7C;
+    color: #B6CFDA;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 50px;
+    margin-left: 50%;
+    display: block;
+    width: fit-content;
+    transform: translateX(-50%);
+}
+.star span{
+    transform: translateY(-5%);
+}
+.produit{
+    text-align: left;
+    font-weight: 600;
+    color: #133D7C;
+    margin: 0;
+}
+.message{
+    text-align: left;
+
+}
+
+.errorB{
+    border: 2px solid red
+}
+
+.noteMise{
+    color: orange;
+}
+span.noteMise ~ span{
+    color: orange;
+}
+
+.arrowDown{
+    display: none;
+}
+
+.noteStar{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 1.3rem;
+}
+.date{
+    text-align: left;
+    font-weight: 600;
+    color: #133D7C;
+
+
+}
 section{
     width: 100%;
 
+}
+
+.star{
+    text-align: left;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    margin: 16px 0px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  
+}
+
+.errorNote::after{
+    content: 'Merci de renseigner une note';
+    position: absolute;
+    top:0;
+    left: -232px;
+    
+    border: 2px solid red;
+    padding: 10px 5px;
+    border-radius: 5px;
+    background-color: white;
+    width: fit-content;
+    animation: alertText 0.3s;
+
+}
+
+.errorNote{
+    border: 2px solid red
+}
+
+.star span[data-clicked="true"]{
+    color: orange;
+}
+.star span[data-clicked="true"] ~span{
+    color: orange;
+}
+
+.displayNote{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.star p{
+    margin: 0;
+}
+
+.star span{
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color .2s, transform .2s;
+}
+
+.star span:hover{
+    color: orange;
+    transform: scale(1.3);
+}
+
+.star span:hover ~ span{
+    color: orange;
+}
+
+.boutonDetail{
+    display: flex;
+    align-items: center;
+}
+
+.plusDeDetail{
+    padding: 10px 20px;
+    display: block;
+    transform: translateY(7%);
 }
 
 .produits img{
@@ -89,12 +228,17 @@ section{
     width:auto
 }
 
-.produits:first-child{
-    margin-top: 20vh;
+section{
+    padding-top: 15vh
 }
-
 .produits:last-child{
     background-color: black;
+    color: #B6CFDA;
+}
+
+.produits:last-child .description a{
+    color: #133D7C;
+    background-color: #B6CFDA;
 }
 
 .produits:last-child h1{
@@ -129,19 +273,96 @@ section{
     border: none;
     color: #133D7C;
     font-size: 1rem;
+}
+
+.text-wrapper p{
+    font-size:  6rem;
+    text-align: center;
+    color: black;
+    margin:0;
+    position:absolute;
+    font-weight: 700;
+    top: 50%;
+    left: 35%;
+    transform: translateY(-50%);
+}
+
+.imgApple{
+    width: 20%;
+    margin-left: 10%;
+    max-width: 300px;
+}
+.letter{
+    display: inline-block;
+}
+.photo{
     display: flex;
     align-items: center;
+    width: 80%;
+    margin: 5% auto;
+    justify-content: space-between;
+}
+.ordi{
+    width: 45%;
+}
+.photo img{
+    width: 100%;
+    border-radius: 10px;
+}
+.photo p{
+    text-align: center;
+    font-weight: 700;
+}
+.tel{
+    width: 45%;
+}
+.presentation{
+    background-color: white;
+    margin: 5% auto;
+    width: 70%;
+    display: flex;
+    padding:0% 5%;
+    align-items: center;
+    border-radius: 10px;
+    
+
+}
+.presentation img{
+    width: 50%;
+}
+.presentation p{
+    padding: 5%;
 }
 
 .produits:last-child button{
     color:#B6CFDA
 }
 
+.success{
+    border: 2px solid green;
+}
+
+.success:after{
+    content: "Merci pour votre avis";
+    top : -40px;
+    width: calc(100% - 20px);
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 5px 10px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+}
+.container{
+    position: relative;
+}
+
 .form{
     width: calc(60% - 60px);
     background-color: white;
     border-radius: 20px;
-    margin: 20vh auto 5vh auto;
+    margin: 0vh auto 5vh auto;
     padding: 30px;
     position: relative;
 }
@@ -180,13 +401,62 @@ div.error::before{
 }
 
 
+.errorElement::before
+{
+    content: "Vous n'avez pas remplit ce champ";
+    position: absolute;
+    top: -70px;
+    width:calc(100% - 40px);
+    right: 0;
+    padding: 5px 20px;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: #B6CFDA;
+    animation: 0.5s alert;
+}
+
+.errorText::before{
+    content: "Vous n'avez pas remplit ce champ";
+    position: absolute;
+    top: 0px;
+    width:calc(20% - 40px);
+    left: calc(-20% - 10px);
+    bottom: 0;
+    padding: 10px 20px;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: white;
+    animation: 0.5s alertText;
+    z-index: 0;
+}
+
+.errorElement input,
+.errorElement select{
+    position: relative;
+    outline: 2px solid red;
+}
+
+.errorElement{
+    position: relative;
+}
+
+.errorText{
+    position: relative;
+    height: fit-content;
+    display: block;
+}
+
 .form textarea{
     resize: none;
-    width: calc(100% - 20px);
+    width: calc(100% - 30px);
     background-color: #B6CFDA;
     border: none;
     border-radius: 20px;
     padding: 15px;
+}
+
+.errorText textarea{
+    outline: 2px solid red;
 }
 
 form{
@@ -197,6 +467,11 @@ form{
     justify-content: space-between;
     margin-bottom: 20px;
 }
+.headerForm span{
+    width: 30%;
+    border-radius: 10px;
+
+}
 
 .headerForm input,
 .headerForm select{
@@ -204,16 +479,17 @@ form{
     border: none;
     padding: 15px;
     border-radius: 10px;
-    width: 30%;
+    width: 100%;
+
 }
 
 
 .messages{
-    width: 60%;
+    width: 40%;
     margin: 50px auto;
     background-color: white;
     text-align: center;
-    padding:20px 0px;
+    padding:20px 10%;
     border-radius: 20px;
 }
 
@@ -223,4 +499,22 @@ form{
         bottom:auto;
     }
 
+}
+
+@keyframes alert {
+    from{
+        transform: translateY(100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes alertText {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
 }

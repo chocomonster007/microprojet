@@ -6,6 +6,7 @@ $titre = "Les peintres espagnoles - Peintures d'Espagne - Art ibérique";
 
 //valoriser la variable contenu
 $noms=['La Watch','L\'Imac','L\'Ipad', 'L\'Iphone 15 pro'];
+$url = ['watch','imac','ipad','iphone'];
 $img=['watch.png','imac.png','ipad.png','iphone.png'];
 $tableau=['diego-velasquez-menines.jpg','francisco-goya-dos-de-mayo.jpg','bartolome-murillo-fille-aux-fleurs.jpg','pablo-picasso-le-reve.jpg','joaquin-sorolla-promenade-bord-de-mer.jpg'];
 $description=["<h2>Fonctionnalités de santé</h2><p>Recevez des alertes en cas de fréquence cardiaque élevée ou faible et en cas d’arythmie</p><h2>Garder le contact</h2><p>Avec les modèles GPS + Cellular, vous pouvez passer des appels et envoyer des SMS même quand votre iPhone n’est pas à proximité</p><h2>Vues d’exercices</h2><p>Avec les vues d’exercices, vous pourrez accéder à davantage de données avancées d’un coup d’œil comme les Zones de fréquence cardiaque et les intervalles personnalisés pour ne pas perdre votre motivation.</p><h2>Fonctionnalités de sécurité avancées</h2><p>Obtenez de l’aide en cas d’urgence avec Détection des chutes, Appel d’urgence et Détection des accidents</p>","<h2>Puce Apple M3</h2><p>La M3 offre encore plus de performances et de possibilités pour vous permettre d’avancer à la vitesse de l’éclair dans vos activités quotidiennes, d’utiliser plusieurs apps à la fois, de donner libre cours à votre créativité et de jouer à vos jeux préférés</p><h2>Mémoire unifiée</h2><p>Plus rapide et plus performante que la RAM traditionnelle, la mémoire unifiée est intégrée à la puce M3, permettant aux apps de partager plus rapidement les données entre le processeur central, le processeur graphique et le Neural Engine</p><h2>Stockage</h2><p>Le stockage SSD (Solid-State Drive) est l’espace dont dispose votre iMac pour conserver vos documents, photos, musique, vidéos et autres fichiers</p><h2>Ports</h2><p>Les ports vous permettent de connecter à votre iMac des accessoires comme des imprimantes, des appareils photo, un écran supplémentaire et des disques durs externes pour le transfert de données, la charge et la synchronisation</p>","<p>Dessinez, peignez et écrivez avec l’Apple Pencil. Et profitez d’un clavier complet et d’un trackpad entièrement cliqua­­ble avec le Magic Keyboard Folio. Grâce à son design modulaire en deux parties, vous pouvez visionner vos contenus et utiliser les raccourcis que vous connaissez déjà, tout en bénéficiant d’un confort de frappe exceptionnel.
@@ -28,17 +29,27 @@ foreach($noms as $key=>$nom):
     }
 
 
-$contenu .= "<div class='produits'>
+$contenu .= "<div class='produits {$url[$key]}'>
                 <div class='visible'>
                     <img src='images/produits/{$img[$key]}' alt='".makeAlt($img[$key])."'>
                     <div class='detail'>
                         <h1 class='nom'>$nom</h1>
-                        <button>Plus de détail<svg width='20px' height='20px' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                        <path d='M10 7L15 12L10 17' stroke='$svgColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>
-                        </svg></button>
+                        <div class='boutonDetail'>
+                        <button class='plusDeDetail' data-produit='{$url[$key]}'>Plus de détail
+                          
+                        </button>
+                        <svg class='arrowRight' width='20px' height='20px' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M10 7L15 12L10 17' stroke='$svgColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>
+                    
+                        <svg class='arrowDown' width='20px' height='20px' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M7 10L12 15L17 10' stroke='$svgColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>
+                        </svg>
+                        </div>
                     </div>
                 </div>
-                <div class='description'>{$description[$key]}
+                <div class='description' data-open='false'>
+                    {$description[$key]}
+                    <a href='2-apple-tous-les-avis.html' data-produit='{$url[$key]}'>Laisser un avis</a>
                 </div>
             </div>";
                 

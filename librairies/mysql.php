@@ -9,13 +9,13 @@ class mysql {
         }
     }
 
-    public function insertion(string $nom, string $produit,string $commentaire):void {
+    public function insertion(string $nom, string $produit,string $commentaire, string $note):void {
         $this->open();
 
-        $requete = "INSERT INTO avis (nom, produit, commentaire) VALUES (:nom,:produit,:commentaire)";
+        $requete = "INSERT INTO avis (nom, produit, commentaire, note) VALUES (:nom,:produit,:commentaire,:note)";
         $insert = $this->open->prepare($requete);
 
-        $insert->execute(['nom'=>$nom, 'produit'=>$produit, 'commentaire'=>$commentaire]);
+        $insert->execute(['nom'=>$nom, 'produit'=>$produit, 'commentaire'=>$commentaire, 'note'=>$note]);
 
         $this->open = NULL;
 
@@ -23,7 +23,7 @@ class mysql {
 
     public function cherche(){
         //écriture de la requete
-        $requete = "SELECT nom, produit, commentaire, date FROM avis ORDER BY date DESC";
+        $requete = "SELECT nom, produit, commentaire, date, note FROM avis ORDER BY date DESC";
         
         $this->open();
 
@@ -38,11 +38,11 @@ class mysql {
 
     }
 
-    public function sameAs(string $nom,string $produit, string $commentaire){
-            $requete = "SELECT nom, produit, commentaire FROM avis WHERE (nom = :nom AND produit = :produit) AND commentaire = :commentaire";
+    public function sameAs(string $nom,string $produit, string $commentaire, string $note){
+            $requete = "SELECT nom, produit, commentaire, note FROM avis WHERE ((nom = :nom AND produit = :produit) AND commentaire = :commentaire) AND note = :note";
             $this->open();
             $search = $this->open->prepare($requete);
-            $fetch = $search->execute(["nom"=>$nom, "produit"=>$produit, "commentaire"=>$commentaire]);
+            $fetch = $search->execute(["nom"=>$nom, "produit"=>$produit, "commentaire"=>$commentaire, "note"=>$note]);
             $resultat = $search->fetch();
             $this->open = NULL;
             return $resultat;
