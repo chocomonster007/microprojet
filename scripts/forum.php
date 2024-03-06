@@ -38,15 +38,15 @@ $contenu .=<<<FORMULAIRE
 <h1>Merci de laisser un avis</h1>
 <form action="" method="post">
     <div class="headerForm">
-    <span class='$inputNom'><input type="text" name="nom" id="nom" placeholder="Votre nom prénom" value="$nom" required></span>
-    <span class='$inputSelect'><select name="produit" id="select" data-value="$produit" required>
+    <input type="text" name="nom" id="nom" placeholder="Votre nom prénom" value="$nom" required class='$inputNom'>
+    <select name="produit" id="select" data-value="$produit" required class='$inputSelect'>
     <option value="">Produit</option>
     <option value="iphone">Iphone</option>
     <option value="ipad">Ipad</option>
     <option value="watch">Watch</option>
     <option value="imac">Imac</option>
     </select>
-    </span>
+
     </div>
     <input type='hidden' id='rating' name="note">
     <div class='star $ratingError'>
@@ -60,8 +60,8 @@ $contenu .=<<<FORMULAIRE
       
     </div>
 
-    <span class='$textArea'>
-    <textarea rows="8" cols="50" name="commentaire" id="message" placeholder="Votre avis" required>$commentaire</textarea></span>
+    
+    <textarea rows="8" cols="50" name="commentaire" id="message" placeholder="Votre avis" required class='$textArea'>$commentaire</textarea>
     <button type="submit">Envoyer</button>
 </form>
 </div>

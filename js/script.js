@@ -45,7 +45,7 @@ document.querySelectorAll('.noteStar')?.forEach((note)=>{
 const optionSelected = document.querySelector('select')?.dataset.value
 if(optionSelected) document.querySelector("option[value='"+optionSelected+"']").setAttribute('selected','')
 
-const titles = gsap.utils.toArray('.text-wrapper p')
+const titles = gsap.utils.toArray('.text-wrapper > p')
 const tl = gsap.timeline({repeat:-1,
                         repeatDelay:0})
 
@@ -56,7 +56,13 @@ titles.forEach(title=>{
         const span = document.createElement('span')
         span.classList.add('letter')
         span.innerText = letter
-        if(letter===" ") span.style.width="3rem"
+        if(letter===" ") {
+            if(window.innerWidth<850){
+                span.style.width="1.5rem"
+            }else{
+                span.style.width="3rem"
+            }
+           }
         title.appendChild(span)
     })
    

@@ -9,9 +9,9 @@ $contenu =<<<TEXTE
     <div class='text-wrapper'>
         <p>Apple</p>
         <p>La pomme</p>
-        <p>Produits d'exceptions</p>
         <p>Qualité</p>
         <p>Design</p>
+        <p>Puissance</p>
     </div>
 </div>
 <div class='presentation'>
