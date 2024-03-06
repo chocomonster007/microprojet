@@ -115,7 +115,20 @@ li a{
 }
 
 .errorB{
-    border: 2px solid red
+    outline: 2px solid red
+}
+
+.errorB::after{
+    content: 'Merci de renseigner tous les champs';
+    position: absolute;
+    top: -50px;
+    width:calc(100% - 40px);
+    left: 0;
+    padding: 10px 20px;
+    border: 2px solid red;
+    border-radius: 5px;
+    text-align: center
+    
 }
 
 .noteMise{
@@ -160,24 +173,6 @@ section{
   
 }
 
-.errorNote::after{
-    content: 'Merci de renseigner une note';
-    position: absolute;
-    top:0;
-    left: -232px;
-    
-    border: 2px solid red;
-    padding: 10px 5px;
-    border-radius: 5px;
-    background-color: white;
-    width: fit-content;
-    animation: alertText 0.3s;
-
-}
-
-.errorNote{
-    border: 2px solid red
-}
 
 .star span[data-clicked="true"]{
     color: orange;
@@ -328,7 +323,7 @@ section{
 
 }
 .presentation img{
-    width: 50%;
+    width: 40%;
 }
 .presentation p{
     padding: 5%;
@@ -383,6 +378,9 @@ section{
 button:hover{
     cursor: pointer;
 }
+.form span{
+    display: block;
+}
 
 div.error{
     outline: 3px solid red;
@@ -401,51 +399,6 @@ div.error::before{
 }
 
 
-.errorElement::before
-{
-    content: "Vous n'avez pas remplit ce champ";
-    position: absolute;
-    top: -70px;
-    width:calc(100% - 40px);
-    right: 0;
-    padding: 5px 20px;
-    border: 2px solid red;
-    border-radius: 5px;
-    background-color: #B6CFDA;
-    animation: 0.5s alert;
-}
-
-.errorText::before{
-    content: "Vous n'avez pas remplit ce champ";
-    position: absolute;
-    top: 0px;
-    width:calc(20% - 40px);
-    left: calc(-20% - 10px);
-    bottom: 0;
-    padding: 10px 20px;
-    border: 2px solid red;
-    border-radius: 5px;
-    background-color: white;
-    animation: 0.5s alertText;
-    z-index: 0;
-}
-
-.errorElement input,
-.errorElement select{
-    position: relative;
-    outline: 2px solid red;
-}
-
-.errorElement{
-    position: relative;
-}
-
-.errorText{
-    position: relative;
-    height: fit-content;
-    display: block;
-}
-
 .form textarea{
     resize: none;
     width: calc(100% - 30px);
@@ -453,10 +406,6 @@ div.error::before{
     border: none;
     border-radius: 20px;
     padding: 15px;
-}
-
-.errorText textarea{
-    outline: 2px solid red;
 }
 
 form{

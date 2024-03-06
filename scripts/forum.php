@@ -25,10 +25,10 @@ if($nom && $commentaire && $produit && $note){
         $classe="error";
         }
 }else if($nom !== null){
-    if($nom === "") $inputNom = "errorElement";
-    if($commentaire === "") $textArea = "errorText";
-    if($produit === "") $inputSelect = "errorElement";
-    if($note === "") $ratingError = "errorNote";
+    if($nom === "") $inputNom = "errorInput";
+    if($commentaire === "") $textArea = "errorInput";
+    if($produit === "") $inputSelect = "errorInput";
+    if($note === "") $ratingError = "errorInput";
     $classe="errorB";
 
 }
@@ -38,8 +38,8 @@ $contenu .=<<<FORMULAIRE
 <h1>Merci de laisser un avis</h1>
 <form action="" method="post">
     <div class="headerForm">
-    <span class='$inputNom'><input type="text" name="nom" id="nom" placeholder="Votre nom prénom" value="$nom"></span>
-    <span class='$inputSelect'><select name="produit" id="select" data-value="$produit">
+    <span class='$inputNom'><input type="text" name="nom" id="nom" placeholder="Votre nom prénom" value="$nom" required></span>
+    <span class='$inputSelect'><select name="produit" id="select" data-value="$produit" required>
     <option value="">Produit</option>
     <option value="iphone">Iphone</option>
     <option value="ipad">Ipad</option>
@@ -61,7 +61,7 @@ $contenu .=<<<FORMULAIRE
     </div>
 
     <span class='$textArea'>
-    <textarea rows="8" cols="50" name="commentaire" id="message" placeholder="Votre avis">$commentaire</textarea></span>
+    <textarea rows="8" cols="50" name="commentaire" id="message" placeholder="Votre avis" required>$commentaire</textarea></span>
     <button type="submit">Envoyer</button>
 </form>
 </div>

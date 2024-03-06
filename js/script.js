@@ -56,7 +56,7 @@ titles.forEach(title=>{
         const span = document.createElement('span')
         span.classList.add('letter')
         span.innerText = letter
-        if(letter===" ") span.style.width="2.5vw"
+        if(letter===" ") span.style.width="3rem"
         title.appendChild(span)
     })
    
