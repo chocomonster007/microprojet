@@ -101,6 +101,7 @@ li a{
     display: block;
     width: fit-content;
     transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 .produit{
@@ -227,6 +228,7 @@ section{
 .produits:last-child{
     background-color: black;
     color: #B6CFDA;
+
 }
 
 .produits:last-child .description a{
@@ -237,6 +239,11 @@ section{
 .produits:last-child h1{
     color:#B6CFDA
 }
+
+.produits:last-child .visible img{
+    max-width: 192px;
+}
+
 
 .produits{
     width: 80%;
@@ -283,6 +290,7 @@ section{
     bottom:-20vh;
     left: 50%;
     transform: translate(-50%,-50%);
+    text-wrap: nowrap;
 }
 
 .imgApple{
@@ -304,7 +312,7 @@ section{
 }
 
 .ordi{
-    width: 45%;
+    width: 100%;
 }
 
 .photo img{
@@ -318,7 +326,8 @@ section{
 }
 
 .tel{
-    width: 45%;
+    width: 100%;
+    margin-top: 50px;
 }
 
 .presentation{
@@ -453,6 +462,7 @@ form{
     border-radius: 20px;
 }
 
+
 @media only screen and (min-width:980px){
     
     nav{
@@ -480,7 +490,7 @@ form{
     }
 
     section{
-        padding-top: 15vh;
+        padding-top: 25vh;
         padding-bottom: 0vh;
 
     }
@@ -538,6 +548,18 @@ form{
     .displayNote{
         flex-direction: row;
         align-items: center;
+    }
+
+    .ordi{
+        width: 45%;
+    }
+
+    .tel{
+        width: 45%;
+        margin-top: 0;
+    }
+    .produits:last-child .visible img{
+        max-width: none;
     }
 }
 
