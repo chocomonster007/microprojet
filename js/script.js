@@ -71,7 +71,6 @@ titles.forEach(title=>{
         y:80,
         rotateX:-90,
         stagger:.05
-
     },"<").to(title.children,{
         opacity:1,
         y:0,
