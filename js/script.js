@@ -70,7 +70,7 @@ titles.forEach(title=>{
         opacity:0,
         y:80,
         rotateX:-90,
-        stagger:.02
+        stagger:.05
 
     },"<").to(title.children,{
         opacity:1,
@@ -81,7 +81,7 @@ titles.forEach(title=>{
         opacity:0,
         y:-80,
         rotateX:90,
-        stagger:.02
+        stagger:.05
     },"<1")
     
 
