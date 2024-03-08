@@ -1,3 +1,4 @@
+/* Loading font */
 @font-face {
 	font-family: 'Arimo';
 	src: url('../font/Arimo-Bold.ttf') format('truetype');
@@ -29,6 +30,7 @@
     font-family: "Arimo",sans-serif;
     font-weight: 400;
 }
+
 body{
     margin: 0;
     padding: 0;
@@ -37,8 +39,8 @@ body{
     background-color: #B6CFDA;
     overflow-x: hidden;
     line-height: 1.3;
-
 }
+
 nav{
     position: fixed;
     left: 50%;
@@ -47,9 +49,9 @@ nav{
     top:auto;
     z-index: 10;
 }
+
 nav ul{
     display: flex;
-
     background-color: #E3EEF2;
     padding: 0.4375rem;
     margin: 0;
@@ -58,8 +60,7 @@ nav ul{
 
 nav ul li{
     list-style: none;
-    margin: 0 10px;
-    
+    margin: 0 10px;    
 }
 
 li a{
@@ -109,9 +110,9 @@ li a{
     color: #133D7C;
     margin: 0;
 }
+
 .message{
     text-align: left;
-
 }
 
 .errorB{
@@ -127,13 +128,13 @@ li a{
     padding: 10px 20px;
     border: 2px solid red;
     border-radius: 5px;
-    text-align: center
-    
+    text-align: center  
 }
 
 .noteMise{
     color: orange;
 }
+
 span.noteMise ~ span{
     color: orange;
 }
@@ -147,19 +148,17 @@ span.noteMise ~ span{
     flex-direction: row-reverse;
     font-size: 1.3rem;
 }
+
 .date{
     text-align: left;
     font-weight: 600;
     color: #133D7C;
-
-
 }
+
 section{
     width: 100%;
     padding-bottom: 10vh;
     padding-top: 20px;
-
-
 }
 
 .star{
@@ -172,13 +171,12 @@ section{
     margin: 16px 0px;
     padding: 5px 10px;
     border-radius: 5px;
-  
 }
-
 
 .star span[data-clicked="true"]{
     color: orange;
 }
+
 .star span[data-clicked="true"] ~span{
     color: orange;
 }
@@ -227,7 +225,6 @@ section{
     max-width: 300px;
 }
 
-
 .produits:last-child{
     background-color: black;
     color: #B6CFDA;
@@ -242,9 +239,11 @@ section{
 .produits:last-child h1{
     color:#B6CFDA
 }
+
 .produits:last-child .visible img{
     max-width: 192px;
 }
+
 
 .produits{
     width: 80%;
@@ -266,6 +265,7 @@ section{
 .produits h1{
     color:#133D7C;
 }
+
 .detail{
     display: flex;
     flex-direction: column;
@@ -297,9 +297,11 @@ section{
     width: 30%;
     margin: 30px auto;
 }
+
 .letter{
     display: inline-block;
 }
+
 .photo{
     display: flex;
     align-items: center;
@@ -308,21 +310,26 @@ section{
     margin: 5% auto;
     justify-content: space-between;
 }
+
 .ordi{
     width: 100%;
 }
+
 .photo img{
     width: 100%;
     border-radius: 10px;
 }
+
 .photo p{
     text-align: center;
     font-weight: 700;
 }
+
 .tel{
     width: 100%;
     margin-top: 50px;
 }
+
 .presentation{
     background-color: white;
     margin: 5% auto;
@@ -332,12 +339,13 @@ section{
     padding:0% 5%;
     align-items: center;
     border-radius: 10px;
-    
 
 }
+
 .presentation img{
     width: 40%;
 }
+
 .presentation p{
     padding: 5%;
 }
@@ -362,6 +370,7 @@ section{
     text-align: center;
     left: 0;
 }
+
 .container{
     position: relative;
     text-align: center;
@@ -377,6 +386,7 @@ section{
     position: relative;
     margin-top: 50px;
 }
+
 .form h1{
     text-align: center;
 }
@@ -411,7 +421,6 @@ div.error::before{
 
 }
 
-
 .form textarea{
     resize: none;
     width: calc(100% - 30px);
@@ -424,6 +433,7 @@ div.error::before{
 form{
     text-align: center;
 }
+
 .headerForm{
     display: flex;
     justify-content: space-between;
@@ -431,7 +441,6 @@ form{
     margin-bottom: 20px;
     align-items: center;
 }
-
 
 .headerForm input,
 .headerForm select{
@@ -444,7 +453,6 @@ form{
 
 }
 
-
 .messages{
     width: 80%;
     margin: 50px auto;
@@ -455,21 +463,19 @@ form{
 }
 
 
-
-
 @media only screen and (min-width:980px){
+    
     nav{
         top:20px;
         bottom:auto;
     }
+
     .text-wrapper p {
         font-size:  6rem;
         top: 50%;
         bottom: auto;
         left: 35%;
         transform: translateY(-50%);
-
-
     }
 
     .imgApple{
@@ -477,6 +483,7 @@ form{
         margin-left: 10%;
         max-width: 300px;
     }
+
     .container{
         text-align: left;
         margin-bottom:0
@@ -491,6 +498,7 @@ form{
     .presentation{
         flex-direction: row;
     }
+
     .photo{
         flex-direction: row;
     }
@@ -500,6 +508,7 @@ form{
         width:auto;
         max-width: none;
     }
+
     .visible{
         flex-direction: row;
     }
@@ -515,18 +524,19 @@ form{
         margin-bottom: 0;
         align-items: baseline;
     }
+
     .headerForm input,
     .headerForm select{
         width: 30%;
         margin-top: 0;
     }
+
     .star span{
         font-size: 1.4rem;}
     
     .star{
         justify-content: start;
-    width: fit-content;
-
+        width: fit-content;
     }
 
     .messages{
@@ -534,6 +544,7 @@ form{
         padding:20px 10%;
 
     }
+
     .displayNote{
         flex-direction: row;
         align-items: center;
@@ -558,14 +569,5 @@ form{
     }
     to{
         transform: translateY(0%);
-    }
-}
-
-@keyframes alertText {
-    from{
-        transform: translateX(100%);
-    }
-    to{
-        transform: translateX(0%);
     }
 }
