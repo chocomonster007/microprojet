@@ -1,6 +1,6 @@
 <?php
 
-$titre = "Les commentaires de nos fanzouzes";
+$titre = "Apple - Avis sur nos produits";
 
 $bd = new mysql();
 

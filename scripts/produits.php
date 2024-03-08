@@ -2,7 +2,7 @@
 
 //valoriser la balise title
 
-$titre = "Les peintres espagnoles - Peintures d'Espagne - Art ibérique";
+$titre = "Apple - Les produits";
 
 //valoriser la variable contenu
 $noms=['La Watch','L\'Imac','L\'Ipad', 'L\'Iphone 15 pro'];
